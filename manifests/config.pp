@@ -7,5 +7,6 @@ class tomcat::config {
         mode    =>  '0644',
         owner   =>  'root',
         group   =>  'root',
+        notify  =>  Service['tomcat'],
     }
 }
