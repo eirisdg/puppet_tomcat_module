@@ -43,6 +43,7 @@
 # Copyright 2017 Your name here, unless otherwise noted.
 #
 class tomcat {
-
-
+    include java::install
+    include tomcat::install
+    include tomcat::service
 }
