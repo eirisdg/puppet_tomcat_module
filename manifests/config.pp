@@ -1,0 +1,11 @@
+# == Class: tomcat::config
+#
+class tomcat::config {
+    # resources
+    file { '/etc/default/tomcat':
+        source  =>  'puppet:///modules/tomcat/tomcat.conf',
+        mode    =>  '0644',
+        owner   =>  'tomcat',
+        group   =>  'tomcat',
+    }
+}
