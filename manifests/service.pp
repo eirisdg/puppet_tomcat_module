@@ -3,7 +3,7 @@
 
 class tomcat::service {
     # resources
-        service { 'tomcat':
+        service { 'tomcat8':
             ensure => running,
             enable => true,
             hasrestart => true,
