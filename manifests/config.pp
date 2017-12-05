@@ -5,7 +5,7 @@ class tomcat::config {
     file { '/etc/default/tomcat':
         source  =>  'puppet:///modules/tomcat/tomcat',
         mode    =>  '0644',
-        owner   =>  'tomcat',
-        group   =>  'tomcat',
+        owner   =>  'root',
+        group   =>  'root',
     }
 }
