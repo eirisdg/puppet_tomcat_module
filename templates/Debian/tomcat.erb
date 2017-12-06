@@ -44,3 +44,6 @@ JAVA_OPTS="-Djava.awt.headless=true -Xmx256m -XX:+UseConcMarkSweepGC"
 # do not need authbind.  It is used for binding Tomcat to lower port numbers.
 # (yes/no, default: no)
 #AUTHBIND=no
+
+CATALINA_PID="<%= @catalina_pid %>"
+SHUTDOWN_VERBOSE=<%= @shutdown_verbose %>
