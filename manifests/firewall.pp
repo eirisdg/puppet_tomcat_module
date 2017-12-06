@@ -10,7 +10,7 @@ class tomcat::firewall inherits tomcat {
                 command => 'firewall-cmd --permanent --add-port={$::tomcat::port}/tcp',
                 path => '/usr/bin:/usr/sbin:/bin:/usr/local/bin',
                 # refreshonly => true,
-                notify => Service['reload']
+                notify => Exec['reload']
             }
             exec { 'reload':
                 command => 'firewalld-cmd --reload',
