@@ -4,7 +4,7 @@ class tomcat::params {
     #For config template
     $catalina_pid   = '/var/run/tomcat.pid'
     $shutdown_verbose = 'false'
-    
+
     case $::os['family'] {
 		'Debian' : {
 			$packages = 'tomcat8'
@@ -28,6 +28,5 @@ class tomcat::params {
 	}
     $port           = '8080'
     $service_state  = running
-
 
 }
