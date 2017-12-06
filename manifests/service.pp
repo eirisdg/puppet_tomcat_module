@@ -1,13 +1,10 @@
 # == Class: tomcat::service
 #
 
-class tomcat::service {
+class tomcat::service inherits tomcat {
     # resources
-        service { 'tomcat8':
-            ensure => running,
+        service { $::tomcat::service_name :
+            ensure => $::tomcat::service_state,
             enable => true,
-            hasrestart => true,
-            hasstatus  => true,
-            # pattern => 'name',
         }
 }

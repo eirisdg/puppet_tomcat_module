@@ -1,8 +1,8 @@
 # == Class: tomcat::install
 #
-class tomcat::install {
+class tomcat::install inherits tomcat{
     # resources
-    package { ['tomcat8']:
+    package { $::tomcat::packages :
         ensure => installed,
     }
 }

@@ -1,12 +1,12 @@
 # == Class: tomcat::config
 #
-class tomcat::config {
+class tomcat::config inherits tomcat {
     # resources
-    file { '/etc/default/tomcat':
+    file { $::tomcat::config_path :
         source  =>  'puppet:///modules/tomcat/tomcat',
-        mode    =>  '0644',
-        owner   =>  'root',
-        group   =>  'root',
-        notify  =>  Service['tomcat8'],
+        mode    =>  '0664',
+        owner   =>  $::tomcat::user,
+        group   =>  $::tomcat::group,
+        notify  =>  Service[$::tomcat::service_name],
     }
 }
