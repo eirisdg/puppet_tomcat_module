@@ -3,7 +3,7 @@
 class tomcat::config inherits tomcat {
     # resources
     file { $::tomcat::config_path :
-        source  =>  'puppet:///modules/tomcat/tomcat',
+        source  =>  $::tomcat::config_source,
         mode    =>  '0644',
         owner   =>  $::tomcat::user,
         group   =>  $::tomcat::group,
