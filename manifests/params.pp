@@ -11,7 +11,7 @@ class tomcat::params {
             $service_name   = 'tomcat8'
 		}
 		'RedHat' : {
-			$packages = 'tomcat'
+			$packages = ['tomcat', 'tomcat-webapps']
             $user     = 'root'
             $group    = 'tomcat'
             $config_path    = '/etc/tomcat/tomcat.conf'
