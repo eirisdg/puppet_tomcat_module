@@ -19,7 +19,7 @@ class tomcat::params {
             $service_name   = 'tomcat'
 		}
 	}
-
+    $port           = '8080'
     $service_state  = running
 
 }
