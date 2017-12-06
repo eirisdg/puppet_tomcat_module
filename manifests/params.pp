@@ -12,7 +12,7 @@ class tomcat::params {
 		}
 		'RedHat' : {
 			$packages = 'tomcat'
-            $user     = 'tomcat'
+            $user     = 'root'
             $group    = 'tomcat'
             $config_path    = '/etc/tomcat/tomcat.conf'
             $config_source  = 'puppet:///modules/tomcat/RedHat/tomcat.conf'
