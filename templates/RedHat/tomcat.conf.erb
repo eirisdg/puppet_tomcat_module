@@ -44,10 +44,10 @@ SECURITY_MANAGER="false"
 # TODO(stingray): does nothing, fix.
 # SHUTDOWN_WAIT="30"
 
-SHUTDOWN_VERBOSE=<%= @shutdown_verbose %>
+SHUTDOWN_VERBOSE=<%= @tomcat.shutdown_verbose %>
 
 # If you wish to further customize your tomcat environment,
 # put your own definitions here
 # (i.e. LD_LIBRARY_PATH for some jdbc drivers)
 
-CATALINA_PID="<%= @catalina_pid %>"
+CATALINA_PID="<%= @tomcat.catalina_pid %>"
