@@ -13,7 +13,7 @@ class tomcat::firewall inherits tomcat {
                 notify => Exec['reload']
             }
             exec { 'reload':
-                command => 'firewalld-cmd --reload',
+                command => 'firewall-cmd --reload',
                 path => '/usr/bin:/usr/sbin:/bin:/usr/local/bin',
                 # refreshonly => true,
             }
