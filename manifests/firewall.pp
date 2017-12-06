@@ -7,7 +7,7 @@ class tomcat::firewall inherits tomcat {
         'RedHat': {
             # code
             exec { 'enable-port':
-                command => 'firewall-cmd --permanent --add-port=8080/tcp',
+                command => "firewall-cmd --permanent --add-port=${::tomcat['port']}/tcp",
                 path => '/usr/bin:/usr/sbin:/bin:/usr/local/bin',
                 # refreshonly => true,
                 notify => Exec['reload']
