@@ -13,7 +13,7 @@ define tomcat::deploy (
     }
 
     exec {'purge_context':
-        path => ['/usr/bin', '/usr/sbin', '/bin/rm'],
+        path => ['/bin', '/usr/bin', '/usr/sbin'],
         command => "rm -rf ${deploy_path}/${name}.war",
         refreshonly => true,
         notify => Service[$::tomcat::service_name],
