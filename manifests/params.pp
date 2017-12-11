@@ -14,6 +14,7 @@ class tomcat::params {
             $config_source  = 'puppet:///modules/tomcat/Debian/tomcat'
             $config_template = template('tomcat/Debian/tomcat.erb')
             $service_name   = 'tomcat8'
+            $deploy_path    = '/var/lib/tomcat8/webapps'
 		}
 		'RedHat' : {
 			$packages = ['tomcat', 'tomcat-webapps']
@@ -23,7 +24,7 @@ class tomcat::params {
             $config_source  = 'puppet:///modules/tomcat/RedHat/tomcat.conf'
             $config_template = template('tomcat/RedHat/tomcat.conf.erb')
             $service_name   = 'tomcat'
-
+            $deploy_path    = '/var/lib/tomcat/webapps'
 		}
 	}
     $port           = '8080'
