@@ -13,8 +13,8 @@ define tomcat::deploy (
     }
 
     exec {'purge_context':
-        command => 'rm -rd ${deploy_path}/${name}.war'
+        command => 'rm -rd ${deploy_path}/${name}.war',
         refreshonly => true,
-        notify => Service[$::tomcat::service_name]
+        notify => Service[$::tomcat::service_name],
     }
 }
