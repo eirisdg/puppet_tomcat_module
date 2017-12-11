@@ -42,7 +42,9 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class tomcat($shutdown_verbose) inherits tomcat::params{
+class tomcat(
+    $shutdown_verbose   = $tomcat::params::shutdown_verbose,
+    ) inherits tomcat::params{
     include java::install
     include tomcat::install
     include tomcat::config
