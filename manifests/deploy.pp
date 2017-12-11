@@ -9,7 +9,7 @@ define tomcat::deploy (
         source => '${deploy_url}',
         owner => $::tomcat::user,
         group => $::tomcat::group,
-        notify => Ecec['purge_context'],
+        notify => Exec['purge_context'],
     }
 
     exec {'purge_context':
