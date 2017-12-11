@@ -14,7 +14,7 @@ define tomcat::deploy (
 
     exec {'purge_context':
         path => ['/bin', '/usr/bin', '/usr/sbin'],
-        command => "rm -rf ${deploy_path}/${name}.war",
+        command => "rm -rf ${deploy_path}/${name}",
         refreshonly => true,
         notify => Service[$::tomcat::service_name],
     }
