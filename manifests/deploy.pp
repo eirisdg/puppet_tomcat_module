@@ -2,7 +2,9 @@
 #
 define tomcat::deploy (
     $deploy_path = $::tomcat::deploy_path,
-    $deploy_url
+    $deploy_url,
+    $checksum = 'md5',
+    $checksum_value
     ) {
     # NAME es el parámetro del nombre llamado desde el nodo. Será el nombre del fichero .war que queremos desplegar.
     file { "${deploy_path}/${name}.war":
@@ -10,6 +12,8 @@ define tomcat::deploy (
         owner => $::tomcat::user,
         group => $::tomcat::group,
         notify => Exec['purge_context'],
+        checksum => "${checksum}",
+        checksum_value => "${checksum_value}",
     }
 
     exec {'purge_context':
