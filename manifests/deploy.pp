@@ -6,6 +6,7 @@ define tomcat::deploy (
     ) {
     # NAME es el parámetro del nombre llamado desde el nodo. Será el nombre del fichero .war que queremos desplegar.
     file { "${deploy_path}/${name}.war":
+        path => ['/usr/bin', '/usr/sbin'],
         source => '${deploy_url}',
         owner => $::tomcat::user,
         group => $::tomcat::group,
